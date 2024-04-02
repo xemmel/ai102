@@ -76,3 +76,4 @@ AI systems should be understandable. Users should be made fully aware�
 Designers and developers of AI-based solution should work within a framework of governance and organizational principles that ensure the solution meets ethical and legal standards that are clearly defined.
 
 
+[Back to top](#ai-102)
