@@ -55,11 +55,13 @@ ai102student@integration-it.com
 
 ........ (Told by instructor)
 
-*Action Required* **Ask Later** NOT *Next*
+REMEMBER: *Action Required* **Ask Later** NOT *Next*
 
 
-portal.azure.com
-entra.microsoft.com
+- portal.azure.com  (Azure)
+- entra.microsoft.com (Entra **AAD**)
+
+[Back to top](#ai-102)
 
 
 ### "Responsible" AI
