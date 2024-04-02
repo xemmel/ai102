@@ -47,6 +47,21 @@ choco install azure-cli -y
 
 [Back to top](#ai-102)
 
+
+
+### Azure login
+
+ai102student@integration-it.com
+
+........ (Told by instructor)
+
+*Action Required* **Ask Later** NOT *Next*
+
+
+portal.azure.com
+entra.microsoft.com
+
+
 ### "Responsible" AI
 
 #### Fairness
