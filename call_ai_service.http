@@ -1,7 +1,7 @@
-@baseUrl = https://intit.cognitiveservices.azure.com
+@baseUrl = https://ai102mlcservice1.cognitiveservices.azure.com/
 @baseHasseUrl = https://ai102testaiazureaiservice.cognitiveservices.azure.com
 
-@key = 0ac5.....
+@key = d76276d90b774b71a5482d1c29ec8c81
 
 @token = eyJ0...
 
@@ -46,3 +46,16 @@ Ocp-apim-subscription-key: {{key}}
 Content-Type: text/plain
 
 This is text, go fuck yourself, my email is lacour@gmail.com
+
+
+### 
+POST {{baseUrl}}/vision/v3.2/read/analyze
+Ocp-apim-subscription-key: {{key}}
+
+{"url":"https://ai102mlcdemo1.blob.core.windows.net/myprivatecontainer/mortenstext.png"}
+
+
+###
+
+GET https://ai102mlcservice1.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/da17da69-8365-404d-8ad7-1ebeebc0f994
+Ocp-apim-subscription-key: {{key}}
