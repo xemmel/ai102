@@ -6,6 +6,8 @@
 
 ```powershell
 
+az login
+
 az account get-access-token --resource https://cognitiveservices.azure.com/
 
 ```

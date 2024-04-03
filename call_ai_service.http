@@ -1,10 +1,13 @@
 @baseUrl = https://intit.cognitiveservices.azure.com
 @key = 0ac536ee85454ca3baffbc881269793d
 
+@token = fdfdfdd
+
 ###
 
 POST {{baseUrl}}/text/analytics/v3.0/languages
 Ocp-apim-subscription-key: {{key}}
+Authorization: Bearer {{token}}
 
 {
     "documents" : [
