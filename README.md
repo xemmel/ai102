@@ -78,6 +78,16 @@ REMEMBER: *Action Required* **Ask Later** NOT *Next*
 [Back to top](#ai-102)
 
 
+
+#### Get a token
+
+```powershell
+
+az account get-access-token --resource https://storage.azure.com/
+
+```
+
+
 ### "Responsible" AI
 
 #### Fairness
