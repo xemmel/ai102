@@ -1,13 +1,15 @@
 @baseUrl = https://intit.cognitiveservices.azure.com
-@key = 0ac536ee85454ca3baffbc881269793d
+@baseHasseUrl = https://ai102testaiazureaiservice.cognitiveservices.azure.com
 
-@token = fdfdfdd
+@key = 0ac5.....
+
+@token = eyJ0...
 
 ###
 
-POST {{baseUrl}}/text/analytics/v3.0/languages
-Ocp-apim-subscription-key: {{key}}
+POST {{baseHasseUrl}}/text/analytics/v3.0/languages
 Authorization: Bearer {{token}}
+Content-Type: application/json
 
 {
     "documents" : [
@@ -36,3 +38,11 @@ Ocp-apim-subscription-key: {{key}}
         "text" : "Hej med jer"
     }
 ]
+
+
+###
+POST {{baseUrl}}/contentmoderator/moderate/v1.0/ProcessText/Screen?autocorrect=true
+Ocp-apim-subscription-key: {{key}}
+Content-Type: text/plain
+
+This is text, go fuck yourself, my email is lacour@gmail.com
