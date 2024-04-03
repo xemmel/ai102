@@ -1,0 +1,35 @@
+@baseUrl = https://intit.cognitiveservices.azure.com
+@key = 5e7d01b8ec6847a08a097434bf5a054d
+
+###
+
+POST {{baseUrl}}/text/analytics/v3.0/languages
+Ocp-apim-subscription-key: {{key}}
+
+{
+    "documents" : [
+        {
+            "id" : "1",
+            "text" : "Hej med jer"
+        },
+        {
+            "id" : "2",
+            "text" : "This is an Azure course"
+        },
+        {
+            "id" : "3",
+            "text" : "Jak się masz"
+        }
+    ]
+}
+
+###
+
+POST {{baseUrl}}/translator/text/v3.0/translate?to=EN
+Ocp-apim-subscription-key: {{key}}
+
+[
+    {
+        "text" : "Hej med jer"
+    }
+]

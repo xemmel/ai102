@@ -7,7 +7,21 @@
 lacour@gmail.com
 
 
+
+#### Course labs
+
 https://microsoftlearning.github.io/AI-102-AIEngineer/
+
+
+#### AI Service swagger
+
+https://westeurope.dev.cognitive.microsoft.com/docs/services
+
+
+#### API Docs
+
+https://learn.microsoft.com/en-us/azure/ai-services/
+
 
 
 
