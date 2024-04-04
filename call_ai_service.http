@@ -49,13 +49,21 @@ This is text, go fuck yourself, my email is lacour@gmail.com
 
 
 ### 
-POST {{baseUrl}}/vision/v3.2/read/analyze
+POST {{baseUrl}}/vision/v3.2/describe
 Ocp-apim-subscription-key: {{key}}
 
-{"url":"https://ai102mlcdemo1.blob.core.windows.net/myprivatecontainer/mortenstext.png"}
+{"url":"https://media.cntraveler.com/photos/58de89946c3567139f9b6cca/16:9/w_2560%2Cc_limit/GettyImages-468366251.jpg"}
 
 
 ###
 
-GET https://ai102mlcservice1.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/da17da69-8365-404d-8ad7-1ebeebc0f994
+POST {{baseUrl}}/computervision/imageanalysis:analyze
+Ocp-apim-subscription-key: {{key}}
+
+{"url":"https://www.cowgirlmagazine.com/wp-content/uploads/2020/02/19/Elvis.jpg"}
+
+
+###
+
+GET https://ai102mlcservice1.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/7cca6fed-527d-4dd1-b7d4-a726f0c88924
 Ocp-apim-subscription-key: {{key}}
