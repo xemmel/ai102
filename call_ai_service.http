@@ -67,3 +67,17 @@ Ocp-apim-subscription-key: {{key}}
 
 GET https://ai102mlcservice1.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/7cca6fed-527d-4dd1-b7d4-a726f0c88924
 Ocp-apim-subscription-key: {{key}}
+
+
+
+### Get a token from a Service Principal (ClientId, ClientSecret, TenantId, Audience)
+
+@clientId = 7d59f29f-58f9-4ae3-822f-4c1ce61a9367
+@secret = MMW8....
+
+POST https://login.microsoftonline.com/551c586d-a82d-4526-b186-d061ceaa589e/oauth2/v2.0/token
+
+client_id={{clientId}}&client_secret={{secret}}&grant_type=client_credentials&scope=https://cognitiveservices.azure.com/.default
+
+
+

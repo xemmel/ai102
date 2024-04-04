@@ -116,3 +116,30 @@ AI systems should be understandable. Users should be made fully aware�
 Designers and developers of AI-based solution should work within a framework of governance and organizational principles that ensure the solution meets ethical and legal standards that are clearly defined.
 
 [Back to top](#ai-102)
+
+
+
+
+#### Service Principal Manual get token
+
+```
+
+@clientId = 7d59f29f-58f9-4ae3-822f-4c1ce61a9367
+@secret = MMW8....
+
+POST https://login.microsoftonline.com/551c586d-a82d-4526-b186-d061ceaa589e/oauth2/v2.0/token
+
+client_id={{clientId}}&client_secret={{secret}}&grant_type=client_credentials&scope=https://cognitiveservices.azure.com/.default
+
+
+
+
+
+```
+
+```powershell
+
+$token = "...";
+Invoke-WebRequest -Method Post -Uri "https://ai102mlcservice1.cognitiveservices.azure.com/contentmoderator/moderate/v1.0/ProcessText/Screen?autocorrect=true" -Headers @{"Authorization" = "Bearer $token";"Content-Type" = "text/plain";} -Body "Fuck you" | Select-Object COntent
+
+```
