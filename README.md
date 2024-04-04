@@ -1,29 +1,36 @@
 ## AI 102
+
 ## Morten la Cour
+
 ## integration-it.com
-
-
 
 lacour@gmail.com
 
-
-
 #### Course labs
 
-https://microsoftlearning.github.io/AI-102-AIEngineer/
+[mslearn-ai-services](https://github.com/MicrosoftLearning/mslearn-ai-services)
 
+[mslearn-ai-vision](https://github.com/MicrosoftLearning/mslearn-ai-vision)
+
+[mslearn-ai-language](https://github.com/MicrosoftLearning/mslearn-ai-language)
+
+[mslearn-ai-document-intelligence](https://github.com/MicrosoftLearning/mslearn-ai-document-intelligence)
+
+[mslearn-knowledge-mining](https://github.com/MicrosoftLearning/mslearn-knowledge-mining)
+
+[mslearn-openai](https://github.com/MicrosoftLearning/mslearn-openai)
+
+_Older_
+
+[AI-102-AIEngineer - (Deprecated)](https://microsoftlearning.github.io/AI-102-AIEngineer/)
 
 #### AI Service swagger
 
 https://westeurope.dev.cognitive.microsoft.com/docs/services
 
-
 #### API Docs
 
 https://learn.microsoft.com/en-us/azure/ai-services/
-
-
-
 
 ### Prereq
 
@@ -47,7 +54,6 @@ choco install azure-cli -y
 
 #### Winget
 
-
 ```powershell
 
  winget install Microsoft.AzureCLI --silent
@@ -58,10 +64,7 @@ choco install azure-cli -y
 
 ```
 
-
 [Back to top](#ai-102)
-
-
 
 ### Azure login
 
@@ -69,15 +72,12 @@ ai102student@integration-it.com
 
 ........ (Told by instructor)
 
-REMEMBER: *Action Required* **Ask Later** NOT *Next*
+REMEMBER: _Action Required_ **Ask Later** NOT _Next_
 
-
-- portal.azure.com  (Azure)
+- portal.azure.com (Azure)
 - entra.microsoft.com (Entra **AAD**)
 
 [Back to top](#ai-102)
-
-
 
 #### Get a token
 
@@ -86,7 +86,6 @@ REMEMBER: *Action Required* **Ask Later** NOT *Next*
 az account get-access-token --resource https://storage.azure.com/
 
 ```
-
 
 ### "Responsible" AI
 
@@ -115,6 +114,5 @@ AI systems should be understandable. Users should be made fully aware�
 #### Accountability
 
 Designers and developers of AI-based solution should work within a framework of governance and organizational principles that ensure the solution meets ethical and legal standards that are clearly defined.
-
 
 [Back to top](#ai-102)
