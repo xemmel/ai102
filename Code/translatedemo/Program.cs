@@ -24,7 +24,7 @@ var credential = new ChainedTokenCredential(
         spcredential);
 
 
-//var credential = new DefaultAzureCredential();
+var credential = new DefaultAzureCredential();
 
 
 
