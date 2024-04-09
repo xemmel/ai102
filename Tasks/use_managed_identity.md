@@ -1,15 +1,15 @@
-/vision/v3.2/read/analyze
-Ocp-apim-subscription-key: {{key}}
+- /vision/v3.2/read/analyze
+- Ocp-apim-subscription-key: {{key}}
 
-{"url":"...."}
+- {"url":"...."}
 
 
 HEADER Response:
 
 Operation-Location: https://.....
 
-GET Operation-Location
-Ocp-apim-subscription-key: {{key}}
+- GET Operation-Location
+- Ocp-apim-subscription-key: {{key}}
 
 -> Get the result
 
