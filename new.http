@@ -1,0 +1,19 @@
+@key = d293838296724f909fdf920bed5f92e8
+
+@baseUrl = https://ai102mlcdemo02.cognitiveservices.azure.com
+
+
+### Read image text
+
+POST {{baseUrl}}/vision/v3.2/read/analyze
+Ocp-apim-subscription-key: {{key}}
+
+{
+    "url" : "https://ai102mlcdemo1.blob.core.windows.net/myprivatecontainer/mortenstext.png"
+}
+
+
+### GET response (when ready)
+
+GET https://ai102mlcdemo02.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/abf8f2f9-21de-4075-a48f-6d646d5f1037
+Ocp-apim-subscription-key: {{key}}
