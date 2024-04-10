@@ -1,14 +1,13 @@
-@baseUrl = https://ai102mlcservice1.cognitiveservices.azure.com/
-@baseHasseUrl = https://ai102testaiazureaiservice.cognitiveservices.azure.com
+@key = d293838296724f909fdf920bed5f92e8
 
-@key = d76276d90b774b71a5482d1c29ec8c81
+@baseUrl = https://ai102mlcdemo02.cognitiveservices.azure.com
 
 @token = eyJ0...
 
 ###
 
-POST {{baseHasseUrl}}/text/analytics/v3.0/languages
-Authorization: Bearer {{token}}
+POST {{baseUrl}}/text/analytics/v3.0/languages
+Ocp-apim-subscription-key: {{key}}
 Content-Type: application/json
 
 {
