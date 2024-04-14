@@ -1,4 +1,4 @@
-@key = d293838296724f909fdf920bed5f92e8
+@key = cc...
 
 @baseUrl = https://ai102mlcdemo02.cognitiveservices.azure.com
 
@@ -15,5 +15,5 @@ Ocp-apim-subscription-key: {{key}}
 
 ### GET response (when ready)
 
-GET https://ai102mlcdemo02.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/abf8f2f9-21de-4075-a48f-6d646d5f1037
+GET https://ai102mlcdemo02.cognitiveservices.azure.com/vision/v3.2/read/analyzeResults/e91fb129-f481-4eff-86dc-64da88d59dbe
 Ocp-apim-subscription-key: {{key}}
