@@ -69,3 +69,68 @@
 ```
 
 - Set HEADER *api-key* and use the key fetched earlier
+
+
+### Image upload sample
+
+```json
+
+{
+   "messages" : [
+          {
+              "role" : "user",
+              "content" : [
+                  {
+                  "type" : "image_url",
+                  "image_url" : {
+                      "url" : "https://www.osculati.com/SupplyImages/WF-0040/bandiera_svezia.jpg"
+                  }
+                  },
+                  {
+				"type": "text",
+				"text": "Describe?"
+			}
+                  
+              ]
+          }
+   ]
+}
+
+```
+
+
+### Csharp example
+
+dotnet new sln -o openaitester
+cd openaitester
+dotnet new console -o openaitester
+cd openaitester
+
+dotnet add package Azure.AI.OpenAI
+
+code .
+
+```csharp
+
+using System.ClientModel;
+using Azure;
+using Azure.AI.OpenAI;
+using OpenAI.Chat;
+
+
+var credential = new ApiKeyCredential("7WR82m8iCBdHzxY2tWhUb8Lc2ueFdGfq7MMFnseBCbU7EzevYL4uJQQJ99AKACfhMk5XJ3w3AAAAACOGnTwK");
+
+var client = new AzureOpenAIClient(
+    endpoint: new Uri("https://mlcopenai102.openai.azure.com/"),
+    credential: credential);
+
+var chatClient = client.GetChatClient("4omini");
+
+var messageSystem = ChatMessage.CreateSystemMessage("Answer in a rude manner");
+var messageUser = ChatMessage.CreateUserMessage(args[0]);
+
+var result = await chatClient.CompleteChatAsync(messageSystem,messageUser);
+System.Console.WriteLine(result.Value.Content.First().Text);
+
+
+```
