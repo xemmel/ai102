@@ -6,6 +6,79 @@
 
 lacour@gmail.com
 
+
+## All APIS
+
+### Init
+
+```powershell
+
+$aiServiceName = "mlcazureai";
+$aiKey = "3c5hmZ.......";
+
+
+```
+
+### Vision OCR (Async)
+
+#### Modern API
+
+```powershell
+
+Clear-Host;
+$url = "https://${aiServiceName}.cognitiveservices.azure.com/vision/v3.1/read/analyze";
+
+$imageUrl = Read-Host("image url");
+
+$body = @"
+{
+   "url" : "${imageUrl}"
+} 
+"@;
+
+
+
+
+$firstResponse = Invoke-webrequest -Uri $url -Method Post -Headers @{ "Ocp-apim-subscription-key" = $aiKey; "Content-Type" = "application/json"; } -Body $body;
+
+$callBackUrl = $firstResponse.Headers["Operation-Location"];
+
+
+$response = curl $callBackUrl -H "Ocp-apim-subscription-key:$aiKey" | ConvertFrom-Json;
+
+$response.analyzeResult.readResults.lines
+
+
+```
+
+#### OCR WITH Document Int
+
+```powershell
+
+$url = "https://${aiServiceName}.cognitiveservices.azure.com/formrecognizer/documentModels/prebuilt-layout:analyze?api-version=2023-07-31";
+
+
+$imageUrl = Read-Host("image url");
+
+$body = @"
+{
+   "urlSource" : "${imageUrl}"
+} 
+"@;
+
+$firstResponse = Invoke-webrequest -Uri $url -Method Post -Headers @{ "Ocp-apim-subscription-key" = $aiKey; "Content-Type" = "application/json"; } -Body $body;
+
+$response = curl $callBackUrl -H "Ocp-apim-subscription-key:$aiKey" | ConvertFrom-Json;
+
+
+$response.analyzeResult.content
+
+```
+
+
+
+
+
 #### Course labs
 
 [mslearn-ai-services](https://github.com/MicrosoftLearning/mslearn-ai-services)
