@@ -17,6 +17,10 @@
         "accounts_aiservicemlcai102searchdemo2_name": {
             "defaultValue": "aiservicemlcai102searchdemo2",
             "type": "String"
+        },
+        "accounts_aiservicemlcai102searchdemo3_name": {
+            "defaultValue": "aiservicemlcai102searchdemo3",
+            "type": "String"
         }
     },
     "variables": {},
@@ -62,6 +66,22 @@
                     "virtualNetworkRules": [],
                     "ipRules": []
                 },
+                "allowProjectManagement": false,
+                "publicNetworkAccess": "Enabled"
+            }
+        },
+        {
+            "type": "Microsoft.CognitiveServices/accounts",
+            "apiVersion": "2025-04-01-preview",
+            "name": "[parameters('accounts_aiservicemlcai102searchdemo3_name')]",
+            "location": "swedencentral",
+            "sku": {
+                "name": "S0"
+            },
+            "kind": "AIServices",
+            "properties": {
+                "apiProperties": {},
+                "customSubDomainName": "iservicemlcai102searchdemo3",
                 "allowProjectManagement": false,
                 "publicNetworkAccess": "Enabled"
             }
@@ -151,6 +171,17 @@
             }
         },
         {
+            "type": "Microsoft.CognitiveServices/accounts/defenderForAISettings",
+            "apiVersion": "2025-04-01-preview",
+            "name": "[concat(parameters('accounts_aiservicemlcai102searchdemo3_name'), '/Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_aiservicemlcai102searchdemo3_name'))]"
+            ],
+            "properties": {
+                "state": "Disabled"
+            }
+        },
+        {
             "type": "Microsoft.CognitiveServices/accounts/raiPolicies",
             "apiVersion": "2025-04-01-preview",
             "name": "[concat(parameters('accounts_aiservicemlcai102searchdemo_name'), '/Microsoft.Default')]",
@@ -222,9 +253,165 @@
         {
             "type": "Microsoft.CognitiveServices/accounts/raiPolicies",
             "apiVersion": "2025-04-01-preview",
+            "name": "[concat(parameters('accounts_aiservicemlcai102searchdemo3_name'), '/Microsoft.Default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_aiservicemlcai102searchdemo3_name'))]"
+            ],
+            "properties": {
+                "mode": "Blocking",
+                "contentFilters": [
+                    {
+                        "name": "Hate",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Hate",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Sexual",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Sexual",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Violence",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Violence",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Selfharm",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Selfharm",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.CognitiveServices/accounts/raiPolicies",
+            "apiVersion": "2025-04-01-preview",
             "name": "[concat(parameters('accounts_aiservicemlcai102searchdemo_name'), '/Microsoft.DefaultV2')]",
             "dependsOn": [
                 "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_aiservicemlcai102searchdemo_name'))]"
+            ],
+            "properties": {
+                "mode": "Blocking",
+                "contentFilters": [
+                    {
+                        "name": "Hate",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Hate",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Sexual",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Sexual",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Violence",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Violence",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Selfharm",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Selfharm",
+                        "severityThreshold": "Medium",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Jailbreak",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Prompt"
+                    },
+                    {
+                        "name": "Protected Material Text",
+                        "blocking": true,
+                        "enabled": true,
+                        "source": "Completion"
+                    },
+                    {
+                        "name": "Protected Material Code",
+                        "blocking": false,
+                        "enabled": true,
+                        "source": "Completion"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.CognitiveServices/accounts/raiPolicies",
+            "apiVersion": "2025-04-01-preview",
+            "name": "[concat(parameters('accounts_aiservicemlcai102searchdemo3_name'), '/Microsoft.DefaultV2')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.CognitiveServices/accounts', parameters('accounts_aiservicemlcai102searchdemo3_name'))]"
             ],
             "properties": {
                 "mode": "Blocking",
