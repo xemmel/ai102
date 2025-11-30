@@ -29,7 +29,7 @@ resource aiServiceOldNet 'Microsoft.CognitiveServices/accounts@2025-04-01-previe
 }
 
 
-resource aiServiceNew 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' = {
+resource aiServiceNew 'Microsoft.CognitiveServices/accounts@2023-05-01' = {
   name: '${appName}-new-nonet'
   location: location
   sku: {
@@ -37,7 +37,7 @@ resource aiServiceNew 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' 
   }
   kind: 'AIServices'
   properties: {
-    customSubDomainName: '${appName}-old-nonet'
+    customSubDomainName: '${appName}-new-nonet'
   }
 }
 
@@ -49,7 +49,7 @@ resource aiServiceNewNet 'Microsoft.CognitiveServices/accounts@2025-04-01-previe
   }
   kind: 'AIServices'
   properties: {
-    customSubDomainName: '${appName}-old-net'
+    customSubDomainName: '${appName}-new-net'
     networkAcls:{ 
       defaultAction: 'Allow'
     }
