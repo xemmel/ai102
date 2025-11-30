@@ -191,6 +191,79 @@ python app.py "Who was his wife?"
 
 ```
 
+### Azure DefaultCredentials
+
+```bash
+
+cd -
+
+mkdir azureapp
+cd azureapp
+
+pip install azure-identity 
+
+
+```
+
+```python
+import sys
+import os
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+from openai import OpenAI
+
+def main():
+    try:
+
+        foundry_name = os.environ["CUSTOM_OPENAI_FOUNDRY_NAME"]
+        message = sys.argv[1]
+        model = os.environ["CUSTOM_OPENAI_DEPLOYMENT_NAME"]
+        token_provider = get_bearer_token_provider(
+            DefaultAzureCredential(), "https://cognitiveservices.azure.com/.default"
+        )
+        url = f"https://{foundry_name}.openai.azure.com/openai/v1/"
+        client = OpenAI(
+            base_url = url,
+            api_key = token_provider,
+        )
+        response = client.responses.create(
+                    model=model,
+                    input = message
+                )
+        print(response.output_text)
+    except Exception as ex:
+        print("Error: ",ex)
+
+if __name__ == "__main__":
+    main()
+
+```
+
+#### Create/Remove Role Assignment
+
+```bash
+MYUSERID=$(az ad signed-in-user show | jq .id -r)
+
+ RESOURCEID=$(az cognitiveservices account show \
+   --resource-group $RGNAME \
+   --name $FOUNDRYNAME | jq .id -r)
+
+
+### Add
+
+az role assignment create \
+   --assignee $MYUSERID \
+   --scope $RESOURCEID \
+   --role 53ca6127-db72-4b80-b1b0-d745d6d5456d
+
+az role assignment delete \
+   --assignee $MYUSERID \
+   --scope $RESOURCEID \
+   --role 53ca6127-db72-4b80-b1b0-d745d6d5456d
+
+
+
+```
+
 ### Make conversation HTTP
 
 ```bash
