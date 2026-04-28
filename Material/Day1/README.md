@@ -20,6 +20,10 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 az login --use-device-code
 
 
+az extension add -n ml
+
+
+
 ### Create Azure Resources
 
 RGNAME="rg-ai4-remove"
@@ -31,6 +35,13 @@ LOCATION="swedencentral"
 az group create \
   --name $RGNAME \
   --location $LOCATION
+
+### Hub
+
+az ml workspace create \
+    --kind hub \
+    --resource-group $RGNAME \
+     --name "${FOUNDRYNAME}-hub"
 
 ### Foundry
 
@@ -110,7 +121,6 @@ az cognitiveservices account purge --location $LOCATION --name $FOUNDRYNAME --re
 ```bash
 
 python3 -m venv azurelab
-
 source azurelab/bin/activate
 
 ```
