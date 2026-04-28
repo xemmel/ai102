@@ -88,6 +88,34 @@ az resource list --resource-group $RGNAME --output table
 
 ```
 
+### Python test client
+
+```python
+
+import os
+from azure.identity import DefaultAzureCredential
+from azure.ai.projects import AIProjectClient
+
+
+
+azure_project_endpoint = os.environ.get("AZURE_PROJECT_ENDPOINT")
+
+
+credential = DefaultAzureCredential()
+project = AIProjectClient(
+        endpoint=azure_project_endpoint,
+        credential=credential)
+
+client = project.get_openai_client()
+response = client.responses.create(
+        model="common",
+        input="First US president"
+        )
+
+print(f"Response output: {response.output_text}")
+
+```
+
 ### Remove
 
 ```bash
