@@ -25,10 +25,27 @@ https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-
 ```
 
 
+### Exercise 7
+
+```
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/07-agent-framework.html
+
+```
+
+
 ### Exercise 8
 
 ```
 
 https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/08-agent-framework-multi-agents.html
+
+```
+
+### Exercise 9
+
+```
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/09-multi-remote-agents-with-a2a.html
 
 ```
