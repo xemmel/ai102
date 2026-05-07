@@ -23,3 +23,12 @@ https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-
 https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html
 
 ```
+
+
+### Exercise 8
+
+```
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/08-agent-framework-multi-agents.html
+
+```
