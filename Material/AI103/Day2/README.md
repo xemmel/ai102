@@ -24,6 +24,14 @@ https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-
 
 ```
 
+### Exercise 6
+
+```
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/06-build-workflow-ms-foundry.html
+
+```
+
 
 ### Exercise 7
 
