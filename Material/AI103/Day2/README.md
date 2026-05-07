@@ -16,3 +16,10 @@ https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/02-
 
 ```
 
+### Exercise 3
+
+```
+
+https://microsoftlearning.github.io/mslearn-ai-agents/Instructions/Exercises/03-mcp-integration.html
+
+```
